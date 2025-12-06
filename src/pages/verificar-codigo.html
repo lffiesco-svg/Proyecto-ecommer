@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Código - TechStore Pro</title>
+    <script defer src="java/verificar.js"></script>
+    <link rel="stylesheet" href="../style/output.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen flex items-center justify-center p-4 overflow-auto">
+    
+    <div class="w-full max-w-md">
+        <!-- Logo y título -->
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl mb-3">
+                <span class="text-3xl">✅</span>
+            </div>
+            <h1 class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                TechStore Pro
+            </h1>
+        </div>
+
+        <!-- Card principal -->
+        <div class="bg-white rounded-2xl shadow-2xl p-6">
+            <div class="text-center mb-5">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-blue-600 rounded-full mb-3">
+                    <span class="text-4xl">📧</span>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Verificar Código</h2>
+                <p class="text-gray-600 text-sm">
+                    Ingresa el código enviado a <br>
+                    <span id="emailMostrar" class="font-semibold text-purple-600"></span>
+                </p>
+            </div>
+
+            <!-- Formulario -->
+            <form id="formVerificar" class="space-y-3">
+                <!-- Código -->
+                <div>
+                    <label for="codigo" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Código de Verificación
+                    </label>
+                    <input 
+                        type="text" 
+                        id="codigo" 
+                        required
+                        maxlength="6"
+                        placeholder="000000"
+                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-center text-2xl font-mono tracking-widest focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                    >
+                </div>
+
+                <!-- Nueva contraseña -->
+                <div>
+                    <label for="nuevaContrasena" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Nueva Contraseña
+                    </label>
+                    <input 
+                        type="password" 
+                        id="nuevaContrasena" 
+                        required
+                        minlength="6"
+                        placeholder="••••••••"
+                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                    >
+                </div>
+
+                <!-- Confirmar contraseña -->
+                <div>
+                    <label for="confirmarContrasena" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Confirmar Contraseña
+                    </label>
+                    <input 
+                        type="password" 
+                        id="confirmarContrasena" 
+                        required
+                        minlength="6"
+                        placeholder="••••••••"
+                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                    >
+                </div>
+
+                <!-- Botón cambiar -->
+                <div class="pt-3">
+                    <button 
+                        type="submit" 
+                        id="btnCambiar"
+                        class="w-full py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white font-bold rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200"
+                    >
+                        Cambiar Contraseña
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast de notificación -->
+    <div id="toast" class="fixed top-5 right-5 px-6 py-4 rounded-xl shadow-2xl text-white font-semibold transform translate-x-[400px] transition-transform duration-300 z-50">
+        <span id="toastMessage"></span>
+    </div>
+
+</body>
+</html>

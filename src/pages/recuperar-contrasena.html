@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - TechStore Pro</title>
+    <script defer src="java/recuperar.js"></script>
+    <link rel="stylesheet" href="../style/output.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-purple-50 min-h-screen flex items-center justify-center p-4">
+    
+    <div class="w-full max-w-md">
+        <!-- Logo y título -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl mb-4">
+                <span class="text-3xl">🔐</span>
+            </div>
+            <h1 class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                TechStore Pro
+            </h1>
+        </div>
+
+        <!-- Card principal -->
+        <div class="bg-white rounded-2xl shadow-2xl p-8">
+            <div class="text-center mb-6">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mb-4">
+                    <span class="text-4xl">🔑</span>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Recuperar Contraseña</h2>
+                <p class="text-gray-600 text-sm">
+                    Ingresa tu correo para recibir un código de verificación
+                </p>
+            </div>
+
+            <!-- Formulario -->
+            <form id="formSolicitar" class="space-y-6">
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                        Correo Electrónico
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        required
+                        placeholder="tu@email.com"
+                        class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
+                    >
+                </div>
+
+                <!-- Botón enviar -->
+                <button 
+                    type="submit" 
+                    id="btnEnviar"
+                    class="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200"
+                >
+                    Enviar Código
+                </button>
+            </form>
+
+            <!-- Link volver -->
+            <div class="mt-6 text-center">
+                <a href="login.html" class="text-sm text-gray-600 hover:text-purple-600 transition">
+                    ← Volver al Login
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast de notificación -->
+    <div id="toast" class="fixed top-5 right-5 px-6 py-4 rounded-xl shadow-2xl text-white font-semibold transform translate-x-[400px] transition-transform duration-300 z-50">
+        <span id="toastMessage"></span>
+    </div>
+
+</body>
+</html>

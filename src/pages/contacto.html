@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="../style/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+</head>
+<body>
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center relative">
+    <!-- Logo mejorado coherente con carrito.html -->
+                <div class=" flex items-center">
+                    <div class="bg-linear-to-r from-blue-600 to-purple-600 text-white px-3 py-2 rounded-lg mr-3">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                    </svg>
+                    </div>
+                    <h1 class="text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        <a href="../pages/index.html">TechStore Pro</a>
+                    </h1>
+                </div>
+    <!-- menu .html -->
+                <label for="menuresponsive" class="cursor-pointer text-5xl md:hidden">=</label>
+                <input type="checkbox" id="menuresponsive" class="peer sr-only">
+
+                <div class=" md:text-gray-700 absolute right-18 top-18 z-99 hidden bg-white/45 shadow shadow-black border-none backdrop-filter backdrop-blur-md rounded-2xl p-4 peer-checked:flex peer-checked:flex-col md:peer-checked:flex md:peer-checked:flex-row md:static md:flex md:space-x-6 space-y-5 md:space-y-0 md:shadow-none md:bg-transparent">
+                    <a href="index.html" class=" hover:text-blue-600 font-medium transition-colors duration-200 relative group">Inicio
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+                    </a>
+                    <a href="./productos.html" class=" hover:text-blue-600 font-medium transition-colors duration-200 relative group">Productos
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+                    </a>
+                    <a href="./categorias.html" class=" hover:text-blue-600 font-medium transition-colors duration-200 relative group">Categorías
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+                    </a>
+                    <a href="./contacto.html" class=" hover:text-blue-600 font-medium transition-colors duration-200 relative group">Contacto
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
+                    </a>
+                </div>
+    <!-- Cart and Mobile Menu MEJORADOS -->
+                <div class="flex items-center space-x-4">
+    <!-- ICONO DE CARRITO MEJORADO - coherente con carrito.html
+    -->
+                    <a href="#" class="cart-icon relative group p-2.5 hover:bg-linear-to-r hover:from-blue-50 hover:to-indigo-50 rounded-xl transition-all duration-300 transform hover:scale-105">
+                        <svg class="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-all duration-300 group-hover:rotate-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.1 5M7 13l-1.1 5m0 0h1.1m0-5v5m0 0h10m-10 0a2 2 0 104 0m6 0a2 2 0 100 4"/>
+                        </svg>
+                    <!-- Contador con efecto pulso mejorado -->
+                        <span id="cart-counter" class="cart-counter-pulse absolute -top-2 -right-2 bg-linear-to-r from-red-500 via-pink-500 to-red-600 text-white text-xs font-bold rounded-full min-w-5 h-5 flex items-center justify-center px-1 shadow-lg border-2 border-white">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="p-4 gap-8 grid grid-cols-1 md:grid-cols-2 bg-gray-100">
+        <section class="py-8 p-4 bg-white rounded-md shadow-md shadow-black/30 ">
+            <div class="mb-4"><h1 class="font-bold text-2xl">Envíanos un mensaje</h1></div>
+            <div>
+                <form class="grid grid-cols-1 lg:grid-cols-2 px-4 gap-x-8 gap-y-4" action="">
+                    <div>
+                        <label class="block" for="nombre">Nombre completo <span class="text-red-500">*</span></label>
+                        <input class="w-full block p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+                    </div>
+
+                    <div>
+                        <label class="block" for="email">Correo electrónico <span class="text-red-500">*</span></label>
+                        <input class="w-full block p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" type="email" name="email" id="email" required placeholder="tu@email.com">
+                    </div>
+
+                    <div>
+                        <label class="block" for="tel">Teléfono</label>
+                        <input class="w-full block p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" type="tel" name="tel" id="tel" placeholder="+57 123 123 12312">
+                    </div>
+
+                    <div>
+                        <label class="block" for="consulta">Tipo de consulta <span class="text-red-500">*</span></label>
+                        <select class="w-full block p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" name="consulta" id="consulta">
+                            <option value="">Selecciona un tema</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="col-span-full flex flex-col">
+                        <label for="mensaje">Mensaje <span class="text-red-500">*</span></label>
+                        <textarea class="p-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none" name="mensaje" id="mensaje" rows="8" required placeholder="Describe tu consulta o mensaje en detale..."></textarea>
+                    </div>
+
+                    <div class="col-span-full flex gap-1 items-start">
+                        <input class="cursor-pointer" type="checkbox" required>
+                        <p class="-mt-1.5">He leído y acepto la <a class="text-blue-400 hover:underline" href="">política de privacidad</a> y el tratamiento de mis datos personales</p>
+                    </div>
+                    <div class="col-span-full">
+                        <button class="cursor-pointer w-full font-extrabold py-4 rounded-lg bg-linear-to-r from-blue-600 to-purple-600  text-white hover:from-blue-700 hover:to-purple-700 shadow-md shadow-black/30 hover:shadow-black/70">Enviar mensaje</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="grid grid-cols-1 gap-8">
+
+            <div class="py-8 px-4 bg-white rounded-md shadow-md shadow-black/30 grid grid-cols-1 gap-8">
+                <div class="mb-4"><h1 class="font-bold text-2xl">Información de contacto</h1></div>
+
+                <div class="flex items-start gap-4">
+                    <div class="relative p-2.5 bg-blue-100 rounded-xl group">
+                        <svg class="w-6 h-6 text-blue-600 transition-all duration-1000 ease-in-out group-hover:transform group-hover:animate-bounce group-hover:rotate-360 group-hover:scale-130" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z M19.5 10.5c0 7.5-7.5 11.25-7.5 11.25S4.5 18 4.5 10.5a7.5 7.5 0 1 1 15 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <ul  class="-mt-1  space-y-4 md:space-y-2">
+                            <li class="font-bold text-lg">Oficina principal</li>
+                            <li class="text-gray-500">Carrera 11 # 93-07, Oficina 501</li>
+                            <li class="text-gray-500">Bogotá D.C, Colombia</li>
+                            <li class="text-gray-400 text-sm">Zona Rosa - Chapinero</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="relative p-2.5 bg-green-100 rounded-xl group">
+                        <svg class="w-6 h-6 mx-auto text-green-600 transition-all ease-in-out duration-1000 group-hover:transform group-hover:scale-150 group-hover:rotate-720" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0-1.243 1.007-2.25 2.25-2.25h1.372c.516 0 .966.351 1.091.852l.862 3.447a1.125 1.125 0 0 1-.291 1.06l-1.21 1.21a.75.75 0 0 0-.075.977c.807 1.162 2.06 2.415 3.222 3.222a.75.75 0 0 0 .977-.075l1.21-1.21a1.125 1.125 0 0 1 1.06-.291l3.447.862c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-1.5C8.128 21.75 2.25 15.872 2.25 8.25v-1.5z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <ul  class="-mt-1 space-y-4 md:space-y-2">
+                            <li class="font-bold text-lg">Teléfonos</li>
+                            <li class="text-gray-500">Línea fija: +57 (1) 234-5678</li>
+                            <li class="text-gray-500">Celular: +57 300 123 4567</li>
+                            <li class="text-gray-500">WhatsApp Business: +57 300 123 4567</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="flex items-start gap-4">
+                    <div class="relative p-2.5 bg-fuchsia-100 rounded-xl group ">
+                        <svg class="w-6 h-6 mx-auto text-fuchsia-600 transition-all duration-300 group-hover:transform group-hover:animate-ping " fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 8.25v8.25a2.25 2.25 0 0 1-2.25 2.25H4.5a2.25 2.25 0 0 1-2.25-2.25V8.25m19.5 0A2.25 2.25 0 0 0 19.5 6H4.5a2.25 2.25 0 0 0-2.25 2.25m19.5 0L12 13.5 2.25 8.25"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <ul class="-mt-1 space-y-4 md:space-y-2">
+                            <li class="font-bold text-lg">Correos Departamentales</li>
+                            <li class="text-gray-500">General: info@techstore.co</li>
+                            <li class="text-gray-500">Ventas: ventas@techstore.co</li>
+                            <li class="text-gray-500">Soporte: soporte@techstore.co</li>
+                            <li class="text-gray-500">Gerencia: gerencia@techstore.co</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="relative p-2.5 bg-orange-100 rounded-xl group">
+                        <svg class="w-6 h-6 mx-auto text-orange-600 transition-all ease-out duration-300 group-hover:transform group-hover:animate-spin group-hover:scale-150 " fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <ul class="-mt-1 space-y-4 md:space-y-2">
+                            <li class="font-bold text-lg">Horarios de Atención</li>
+                            <li class="text-gray-500">Lunes a viernes: 8:00 AM - 6:00 PM</li>
+                            <li class="text-gray-500">Sábados: 9:00 AM - 3:00 PM</li>
+                            <li class="text-gray-500">Domingos y festivos: Cerrado</li>
+                            <li class="text-gray-400 text-sm">Zona horaria: GMT-5 (Bogotá)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-8 px-4 bg-white rounded-md shadow-md shadow-black/30 grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div class="col-span-full"><h2  class="font-bold text-xl">Síguenos en redes sociales</h2></div>
+
+                <a href="#" class="flex items-center gap-2 p-2 px-4 rounded-lg border-2 border-gray-300 cursor-pointer">
+                    <div class="text-2xl">📘</div>
+                    <div>
+                        <p class="font-medium">Facebook</p>
+                        <p class="text-gray-400">@techstore.co</p>
+                    </div>
+                </a>
+
+                <a href="#" class="flex items-center gap-2 p-2 px-4 rounded-lg border-2 border-gray-300 cursor-pointer">
+                    <div  class="text-2xl">📷</div>
+                    <div>
+                        <p class="font-medium">Instagram</p>
+                        <p class="text-gray-400">@techstore_co</p>
+                    </div>
+                </a>
+
+                <a href="#" class="flex items-center gap-2 p-2 px-4 rounded-lg border-2 border-gray-300 cursor-pointer">
+                    <div  class="text-2xl">🐦</div>
+                    <div>
+                        <p class="font-medium">Twitter/X</p>
+                        <p class="text-gray-400">@techstore_co</p>
+                    </div>
+                </a>
+
+                <a href="#" class="flex items-center gap-2 p-2 px-4 rounded-lg border-2 border-gray-300 cursor-pointer">
+                    <div  class="text-2xl">💬</div>
+                    <div>
+                        <p class="font-medium">WhatsApp</p>
+                        <p class="text-gray-400">Chat directo</p>
+                    </div>
+                </a>
+
+                <a href="#" class="flex items-center gap-2 p-2 px-4 rounded-lg border-2 border-gray-300 cursor-pointer">
+                    <div  class="text-2xl">📺</div>
+                    <div>
+                        <p class="font-medium">Youtube</p>
+                        <p class="text-gray-400">TechStore TV</p>
+                    </div>
+                </a>
+
+                <a href="#" class="flex items-center gap-2 p-2 px-4 rounded-lg border-2 border-gray-300 cursor-pointer">
+                    <div class="text-2xl">🧳</div>
+                    <div>
+                        <p class="font-medium">Linkedin</p>
+                        <p class="text-gray-400">TechStore Pro</p>
+                    </div>
+                </a>
+
+
+
+            </div>
+            <div class="py-8 px-4 bg-blue-50 rounded-md shadow-md shadow-black/30">
+                <div><h1 class="font-bold text-xl">¿Por qué seguirnos?</h1></div>
+                <div class="flex items-center gap-2 p-2">
+                    <i class="fa-solid fa-check text-blue-400"></i>
+                    <p class="text-gray-500">Atención personalizada y especializada</p>
+                </div>
+
+                <div class="flex items-center gap-2 p-2">
+                    <i class="fa-solid fa-check text-blue-400"></i>
+                    <p class="text-gray-500">Soporte técnico post-venta incluído</p>
+                </div>
+
+                <div class="flex items-center gap-2 p-2">
+                    <i class="fa-solid fa-check text-blue-400"></i>
+                    <p class="text-gray-500">Garantía extendida en todos nuestros productos</p>
+                </div>
+
+                <div class="flex items-center gap-2 p-2">
+                    <i class="fa-solid fa-check text-blue-400"></i>
+                    <p class="text-gray-500">Envío gratis en compras superiores a $500.000</p>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto" class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-3 md:grid-cols-4 gap-8">
+                <div class="col-span-3 md:col-span-1">
+    
+                    <div class="flex items-center mb-4">
+                        <div class="bg-linear-to-r from-blue-600 to-purple-600 text-white p-2 rounded-lg mr-3">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">TechStore Pro</h3>
+                    </div>
+    
+                    <p class="text-gray-400 mb-4">Tu tienda de tecnología de confianza con los mejores productos y precios.</p>
+                </div>
+    
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Enlaces</h3>
+                    <ul class="space-y-10 md:space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors duration-200">Inicio</a></li>
+                        <li><a href="productos.html" class="hover:text-white transition-colors duration-200">Productos</a></li>
+                        <li><a href="carrito.html" class="hover:text-white transition-colors duration-200">Carrito</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Atención</h3>
+                    <ul class="space-y-10 sm:space-6 md:space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Contacto</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Envíos</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Devoluciones</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-10 sm:space-6 md:space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Términos</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Privacidad</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 TechStore Pro. Todos los derechosreservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
