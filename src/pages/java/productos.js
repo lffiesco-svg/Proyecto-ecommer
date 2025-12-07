@@ -3,7 +3,7 @@ const grid = document.getElementById("productos-grid");
 
 async function cargarProductos() {
     try {
-        const respuesta = await fetch("http://localhost:8081/api/productos");
+        const respuesta = await fetch("https://backend-msql-bptv.onrender.com/api/productos");
         const productos = await respuesta.json();
 
 

@@ -5,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('✅ página cargada correcta - sistema listo')
 
-    const api_url = "http://localhost:8081/api/login";
+    const api_url = "https://backend-msql-bptv.onrender.com/api/login";
 
     // enviar datos del formulario
 

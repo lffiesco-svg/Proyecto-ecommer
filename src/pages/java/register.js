@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('✅ página cardaga correcta - sistema listo')
 
-    const api_url = "http://localhost:8081/api/register";
+    const api_url = "https://backend-msql-bptv.onrender.com/api/register";
 
     document.getElementById('register-form').addEventListener('submit', async (e) => {
         e.preventDefault();

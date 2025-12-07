@@ -48,7 +48,7 @@ form.addEventListener('submit', async (e) => {
     btnCambiar.textContent = 'Cambiando...';
 
     try {
-        const response = await fetch('http://localhost:8081/api/recuperar/cambiar-contrasena', {
+        const response = await fetch('https://backend-msql-bptv.onrender.com/api/recuperar/cambiar-contrasena', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

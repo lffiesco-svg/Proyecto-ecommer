@@ -408,9 +408,6 @@
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
   }
-  .mt-20 {
-    margin-top: calc(var(--spacing) * 20);
-  }
   .mr-1 {
     margin-right: calc(var(--spacing) * 1);
   }
@@ -1092,9 +1089,6 @@
   .text-left {
     text-align: left;
   }
-  .text-right {
-    text-align: right;
-  }
   .font-mono {
     font-family: var(--font-mono);
   }
@@ -1201,9 +1195,6 @@
   }
   .text-orange-600 {
     color: var(--color-orange-600);
-  }
-  .text-purple-600 {
-    color: var(--color-purple-600);
   }
   .text-red-500 {
     color: var(--color-red-500);

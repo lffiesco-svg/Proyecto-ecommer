@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     let usuario = null;
     try {
-        const res = await fetch("http://localhost:8081/api/obtener", {
+        const res = await fetch("https://backend-msql-bptv.onrender.com/api/obtener", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: perfil.email })

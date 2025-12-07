@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
 import "./db/db.js";
 import createProd from './routes/createProdRou.js';
 import register from './routes/registrerRou.js';
@@ -9,20 +10,29 @@ import PerfilRouter from './routes/perfil.js';
 import pedidosRoutes from "./routes/pedidos.js";
 import recuperarRoutes from "./routes/recuperarRou.js";
 
+// Cargar variables de entorno
+dotenv.config();
 
 const app = express();
 
 app.use(express.json());
-// habilitar todas las rutas
 
-app.use(cors());
+// ✅ CORS configurado para aceptar peticiones de Netlify
+app.use(cors({
+    origin: [
+        'http://localhost:5501',
+        'http://127.0.0.1:5501',
+        'https://profound-shortbread-66d470.netlify.app'
+    ],
+    credentials: true
+}));
 
-// primera ruta
-
+// Primera ruta
 app.get('/', (req, res) => {
-    res.send('Bienvenido al curso de node express');
+    res.send('🚀 API TechStore Pro - Backend funcionando correctamente');
 });
 
+// Rutas de la API
 app.use("/api/", createProd);
 app.use("/api/", register);
 app.use("/api/", login);
@@ -31,6 +41,9 @@ app.use("/api/", PerfilRouter);
 app.use("/api/pedidos", pedidosRoutes);
 app.use('/api/recuperar', recuperarRoutes);
 
+// ✅ Puerto dinámico (Render asigna automáticamente el puerto)
+const PORT = process.env.PORT || 8081;
 
-
-app.listen(8081, () => console.log('servidor corriendo en http://localhost:8081'));
+app.listen(PORT, () => {
+    console.log(`🚀 Servidor corriendo en puerto ${PORT}`);
+});

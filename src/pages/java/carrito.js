@@ -194,7 +194,7 @@ async function finalizarCompra(event) {
     try {
         // Crear pedidos para cada producto
         const promesas = carrito.map(producto => {
-            return fetch('http://localhost:8081/api/pedidos/crear', {
+            return fetch('https://backend-msql-bptv.onrender.com/api/pedidos/crear', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
