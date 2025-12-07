@@ -1,6 +1,9 @@
 import nodemailer from "nodemailer";
 import bcrypt from "bcryptjs";
 import user from "../models/usuarios.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // ========== ALMACENAR CÓDIGOS TEMPORALMENTE ==========
 // En producción usa Redis o una base de datos
@@ -10,8 +13,8 @@ const codigosVerificacion = new Map();
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: "lffiesco@gmail.com", // ← Cambia esto por tu email
-        pass: "jrov sfvd zcup rbvp" // ← Pega aquí la contraseña de 16 caracteres
+        user:  process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     }
 });
 
@@ -42,7 +45,7 @@ export const solicitarCodigo = async (req, res) => {
 
         // Configurar el correo
         const mailOptions = {
-            from: "lffiesco@gmail.com", // ← Tu email
+            from: process.env.EMAIL_USER, // ← Tu email
             to: usuario.email,
             subject: "🔐 Código de Verificación - TechStore Pro",
             html: `

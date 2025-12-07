@@ -8,6 +8,7 @@ const productSchema = new mongoose.Schema({
     imagen: {type:String, required:true},
     nombrecliente: {type:String, required:true},
     telefono: {type:String, required:true},
+    edad: {type:Number, required:true},
     email: {type:String, required:true},
     sexo: {type:String, required:true},
     direccion: {type:String, required:true},
