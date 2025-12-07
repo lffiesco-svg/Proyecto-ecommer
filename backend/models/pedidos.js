@@ -11,6 +11,8 @@ const productSchema = new mongoose.Schema({
     edad: {type:Number, required:true},
     email: {type:String, required:true},
     sexo: {type:String, required:true},
+    ciudad: {type:String, required:true},
+    codigopostal: {type:String, required:true},
     direccion: {type:String, required:true},
     fechaentrega: {type:Date, required:true},
     metodoPago: {type:String, required:true},
