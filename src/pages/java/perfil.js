@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                     // Restaurar botón de editar
                     botonesDiv.innerHTML = `
-                        <button id="editarBtn" class="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold text-lg">
+                        <button id="editarBtn" class="w-full py-3 rounded-xl bg-linear-to-r from-blue-500 to-purple-600 text-white font-bold text-lg">
                             Editar Perfil
                         </button>
                     `;
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 // Restaurar botón de editar
                 botonesDiv.innerHTML = `
-                    <button id="editarBtn" class="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold text-lg">
+                    <button id="editarBtn" class="w-full py-3 rounded-xl bg-linear-to-r from-blue-500 to-purple-600 text-white font-bold text-lg">
                         Editar Perfil
                     </button>
                 `;
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <a href="../pages/miperfil.html" class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-800 transition-all duration-150 rounded-md cursor-pointer">
                     Mi Perfil
                 </a>
-                <button id="logout-btn" class="flex items-center w-full px-4 py-3 text-sm text-gray-600 hover:bg-blue-100 hover:text-blue-800 transition-all duration-150 rounded-md cursor-pointer">
+                <button id="logout-btn" class="flex items-center w-full px-4 py-3 text-sm text-gray-600 hover:bg-blue-100 hover:text-green-500 transition-all duration-150 rounded-md cursor-pointer">
                     Cerrar sesión
                 </button>
             </div>
@@ -290,7 +290,7 @@ function mostrarToast(mensaje, tipo = "info") {
     const colores = {
         success: "bg-green-500",
         error: "bg-red-500",
-        info: "bg-blue-500"
+        info: "bg-green-500"
     };
 
     toast.className = `fixed top-5 right-5 px-6 py-4 rounded-lg shadow-lg text-white font-semibold z-[9999] transition-opacity duration-300 ${colores[tipo] || colores.info}`;
