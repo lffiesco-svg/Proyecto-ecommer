@@ -290,7 +290,7 @@ function mostrarToast(mensaje, tipo = "info") {
     const colores = {
         success: "bg-green-500",
         error: "bg-red-500",
-        info: "bg-green-500"
+        info: "bg-blue-500"
     };
 
     toast.className = `fixed top-5 right-5 px-6 py-4 rounded-lg shadow-lg text-white font-semibold z-[9999] transition-opacity duration-300 ${colores[tipo] || colores.info}`;
