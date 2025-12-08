@@ -93,7 +93,11 @@ function cargarCarrito() {
         const carritoVacio = document.createElement('section');
         carritoVacio.className = 'col-span-2 bg-white rounded-2xl shadow-xl p-12 text-center';
         carritoVacio.innerHTML = `
-            <div class="text-6xl mb-6">🛒</div>
+            <div class="text-6xl mb-6"><svg class="mx-auto text-gray-700" width="110" height="110" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.1 5M7 13l-1.1 5m0 0h1.1m0-5v5m0 0h10m-10 0a2 2 0 104 0m6 0a2 2 0 100 4"/>
+</svg>
+
+</div>
             <h2 class="text-2xl font-bold text-gray-800 mb-4">Tu carrito está vacío</h2>
             <p class="text-gray-600 mb-6">¡Descubre productos increíbles y comienza tu compra!</p>
             <a href="productos.html" class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-xl font-bold hover:shadow-lg transition">
@@ -139,11 +143,26 @@ function cargarCarrito() {
     });
     
     // Botón vaciar carrito
-    seccionProductos.innerHTML += `
-        <button onclick="confirmarVaciarCarrito()" class="w-full py-3 bg-red-500 text-white font-bold rounded-xl hover:bg-red-600 transition">
-            🗑️ Vaciar Carrito
+   seccionProductos.innerHTML += `
+    <div class="flex items-center justify-between mt-4">
+        
+       <!-- Vaciar carrito -->
+        <button onclick="confirmarVaciarCarrito()" 
+        class="flex items-center gap-2 px-4 py-2 bg-red-500 text-white text-sm font-semibold rounded-lg hover:bg-red-600 active:scale-95 transition shadow-md">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+            </svg>
+            Vaciar carrito
         </button>
-    `;
+         <!-- Continuar comprando -->
+        <a href="/src/pages/productos.html" class="flex items-center gap-1 text-blue-600 font-medium hover:underline transition cursor-pointer">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+            Continuar Comprando
+        </a>
+          </div>
+`;
     
     contenedorProductos.insertBefore(seccionProductos, resumenPedido);
     

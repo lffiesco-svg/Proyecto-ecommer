@@ -17,7 +17,7 @@ form.addEventListener('submit', async (e) => {
     btnEnviar.textContent = 'Enviando...';
 
     try {
-        const response = await fetch('https://backend-msql-bptv.onrender.com/api/recuperar/solicitar-codigo', {
+        const response = await fetch('http://localhost:8081/api/recuperar/solicitar-codigo', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
