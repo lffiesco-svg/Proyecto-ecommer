@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-const productSchema = new mongoose.Schema({
+const pedidoSchema = new mongoose.Schema({
     productId: {type:String, required:true, unique:true},
     nombreproducto: {type:String, required:true},
     descripcion: {type:String, required:true},
@@ -20,6 +20,6 @@ const productSchema = new mongoose.Schema({
 });
 
 // forzar el guardado de información en la colección de productos
-const pedidos = mongoose.model("pedidos", productSchema, "pedidos");
+const pedidos = mongoose.model("pedidos", pedidoSchema, "pedidos");
 
 export default pedidos;

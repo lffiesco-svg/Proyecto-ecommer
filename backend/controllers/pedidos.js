@@ -89,13 +89,19 @@ export const obtenerPedido = async (req, res) => {
 
 
 // Obtener todos los pedidos
+// Obtener todos los pedidos
 export const obtenerTodos = async (req, res) => {
     try {
-        const lista = await pedidos.find();
+        console.log("🔍 Buscando pedidos..."); // Para debug
+        
+        const lista = await pedidos.find().maxTimeMS(5000); // Timeout de 5 segundos
 
+        console.log("✅ Pedidos encontrados:", lista.length); // Para debug
+        
         res.status(200).json({ pedidos: lista });
 
     } catch (error) {
+        console.error("❌ Error:", error.message); // Para debug
         res.status(500).json({ message: "Error al obtener los pedidos", error: error.message });
     }
 };
