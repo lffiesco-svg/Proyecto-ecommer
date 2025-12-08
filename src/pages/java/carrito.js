@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
     actualizarContadorCarrito();
     
     // Si estamos en la página del carrito, cargar productos
-    if (window.location.href.includes('carrito.html')) {
+    if (window.location.href.includes('carrito')) {
         cargarCarrito();
         
         // Configurar formulario
