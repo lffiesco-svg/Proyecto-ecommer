@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         try {
-            const res = await fetch("http://localhost:8081/api/obtener", {
+            const res = await fetch( "https://backend-msql-bptv.onrender.com/api/obtener", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email: perfil.email })
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
 
                 try {
-                    const res = await fetch("http://localhost:8081/api/actualizar", {
+                    const res = await fetch("https://backend-msql-bptv.onrender.com/api/actualizar", {
                         method: "PUT",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 if (!confirmar) return;
 
                 try {
-                    const res = await fetch("http://localhost:8081/api/eliminar", {
+                    const res = await fetch("https://backend-msql-bptv.onrender.com/api/eliminar", {
                         method: "DELETE",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ email: usuarioActual.email })
