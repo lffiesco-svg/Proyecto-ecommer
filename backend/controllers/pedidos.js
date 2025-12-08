@@ -28,11 +28,7 @@ export const crearPedido = async (req, res) => {
         }
 
         // Verificar si el pedido ya existe
-        const existePedido = await pedidos.findOne({ productId });
-        if (existePedido) {
-            return res.status(400).json({ message: "Este ID de producto ya está registrado" });
-        }
-
+      
         const nuevoPedido = new pedidos({
             productId,
             nombreproducto,
