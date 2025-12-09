@@ -120,8 +120,9 @@ function cargarCarrito() {
             <div class="bg-white rounded-2xl shadow-lg p-6 flex items-center gap-6 hover:shadow-xl transition">
                 <img src="${producto.imagen}" alt="${producto.nombre}" class="w-24 h-24 object-cover rounded-xl">
                 <div class="flex-1">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">${producto.nombre}</h3>
-                    <p class="text-2xl font-bold text-blue-600">$${producto.precio.toLocaleString('es-CO')}</p>
+                 <h3 class="text-xl font-bold text-gray-800 mb-2">${producto.nombre}</h3>
+                    <p class="text-lg font-semibold text-blue-600">$${producto.precio.toLocaleString('es-CO')}</p>
+                    
                 </div>
                 <div class="flex items-center gap-3">
                     <button onclick="actualizarCantidad('${producto.productId}', ${producto.cantidad - 1})" class="w-10 h-10 bg-gray-200 rounded-lg hover:bg-gray-300 transition flex items-center justify-center font-bold text-xl">
@@ -137,6 +138,10 @@ function cargarCarrito() {
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
                     </svg>
                 </button>
+                <div class="text-right">
+                <p class="text-sm text-gray-500">Subtotal</p>
+                <p class="text-2xl font-bold text-gray-900">$${(producto.precio * producto.cantidad).toLocaleString('es-CO')}</p>
+            </div>
             </div>
         `;
         seccionProductos.innerHTML += productoHTML;
@@ -147,7 +152,7 @@ function cargarCarrito() {
     <div class="flex items-center justify-between mt-4">
         
        <!-- Vaciar carrito -->
-        <button onclick="confirmarVaciarCarrito()" 
+       <button onclick="mostrarModalVaciar()"
         class="flex items-center gap-2 px-4 py-2 bg-red-500 text-white text-sm font-semibold rounded-lg hover:bg-red-600 active:scale-95 transition shadow-md">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
@@ -270,19 +275,29 @@ async function finalizarCompra(event) {
 
 // ========== CONFIRMACIONES ==========
 function confirmarEliminar(productId) {
-    if (confirm('¿Seguro que deseas eliminar este producto del carrito?')) {
-        eliminarDelCarrito(productId);
-        mostrarToast('Producto eliminado', 'success');
+    eliminarDelCarrito(productId);
+    mostrarToast('Producto eliminado', 'success');
+}
+// ========== MODAL VACIAR CARRITO ==========
+function mostrarModalVaciar() {
+    const modal = document.getElementById('modal-vaciar');
+    if (modal) {
+        modal.classList.remove('hidden');
+    }
+}
+
+function cerrarModalVaciar() {
+    const modal = document.getElementById('modal-vaciar');
+    if (modal) {
+        modal.classList.add('hidden');
     }
 }
 
 function confirmarVaciarCarrito() {
-    if (confirm('¿Estás seguro de que deseas vaciar el carrito?\n\nEsta acción eliminará todos los productos de tu carrito. ¿Estás seguro?')) {
-        vaciarCarrito();
-        mostrarToast('Carrito vaciado', 'success');
-    }
+    vaciarCarrito();
+    cerrarModalVaciar();
+    mostrarToast('Carrito vaciado', 'success');
 }
-
 // ========== FUNCIÓN TOAST ==========
 function mostrarToast(mensaje, tipo = 'info') {
     let toast = document.getElementById('toast-carrito');
